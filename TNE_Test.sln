@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNE_Test", "TNE_Test.csproj", "{7F03216C-19ED-441C-8A2E-400FFF7A50F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F03216C-19ED-441C-8A2E-400FFF7A50F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F03216C-19ED-441C-8A2E-400FFF7A50F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F03216C-19ED-441C-8A2E-400FFF7A50F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F03216C-19ED-441C-8A2E-400FFF7A50F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
