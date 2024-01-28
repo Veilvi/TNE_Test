@@ -1,18 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using TNE_Test.Data;
+using TNE_Test.Services;
 
 namespace TNE_Test
 {
@@ -24,8 +13,6 @@ namespace TNE_Test
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<TNE_TestDBContext>(
@@ -34,8 +21,11 @@ namespace TNE_Test
                     x => x.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)
                 )
                 );
+            services.AddScoped<DbContext, TNE_TestDBContext>();
+            services.AddTransient<ITneServices, TneServices>();
             services.AddControllers();
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "TNE_Test", Version = "1.0", }); });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "TNE_Test", Version = "1.0",
+                Description = "Даты отправляются и получаются в формате ISO 8601. Например: 2023-12-22T15:53:43.2311892"}); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
