@@ -41,28 +41,28 @@ public class DataFiller
             {
                 Name = "ПАО «ОАК»",
                 Address = "Россия, 115054, Москва, улица Б. Пионерская, д. 1",
-                ChildOrganizations =
-                [
+                ChildOrganizations = new List<ChildOrganization>
+                    {
                     new ChildOrganization
                     {
                         Name = "АО «ЛИИ им. М.М. Громова»",
                         Address = "140180, Московская область, г. Жуковский, ул. Гарнаева, д. 2А ",
-                        ObjectsOfConsumption =
-                        [
+                        ObjectsOfConsumption = new List<ObjectOfConsumption>
+                            {
                             new ObjectOfConsumption
                             {
                                 ObjectName = "Здание ЛИИ",
                                 Address = "140180, Московская область, г. Жуковский, ул. Гарнаева, д. 2А",
-                                ElectricitySupplyPoints =
-                                [
+                                ElectricitySupplyPoints = new List<ElectricitySupplyPoint>
+                                    { 
                                     new ElectricitySupplyPoint
                                     {
                                         NameOfDeliveryPoint = "Трансформатор 1",
                                         MaximumPower = 500
                                     }
-                                ],
-                                ElectricityMeasurementPoints =
-                                [
+                                },
+                                ElectricityMeasurementPoints = new List<ElectricityMeasurementPoint>
+                                    { 
                                     new ElectricityMeasurementPoint
                                     {
                                         Name = "SomeName",
@@ -87,11 +87,11 @@ public class DataFiller
                                             VerificationDate = new DateTime(2017,06,16)
                                         }
                                     }
-                                ]
+                                }
                             }
-                        ]
+                        }
                     }
-                ]
+                }
             };
         Organization1.ChildOrganizations[0]
             .ObjectsOfConsumption[0]

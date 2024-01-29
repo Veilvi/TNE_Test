@@ -28,6 +28,11 @@ namespace HttpsAPI.Controllers
             _service = service;
             Context = context;
         }
+
+        /// <summary>
+        /// Заполнение базы даннах данными
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("generateData")]
         public async Task<IActionResult> GenerateData() // Пока здесь инициализирую данные
         {
@@ -41,6 +46,13 @@ namespace HttpsAPI.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        /// <summary>
+        /// Добавить новую точку измерения с указанием счетчика, трансформатора тока
+        /// и трансформатора напряжения.
+        /// </summary>
+        /// <param name="objOfConsumptionId">Id объекта потребелния</param>
+        /// <param name="dto">CurrentTransformerCreateDto</param>
         [HttpPost("measurement_points/{objOfConsumptionId}")]
         public async Task<IActionResult> CreateNewMeasurementPoint(long objOfConsumptionId, MeasurementPointCreateDto dto)
         {
@@ -58,7 +70,12 @@ namespace HttpsAPI.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-        
+
+        /// <summary>
+        ///Выбрать все расчетные приборы учета в {year} году.
+        /// </summary>
+        /// <param name="year">Год</param>
+        /// <returns></returns>
         [HttpGet("calculation_meters")]
         public async Task<IActionResult> GetAllCalculationMeters(int year)
         {
@@ -72,7 +89,13 @@ namespace HttpsAPI.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-        
+
+        /// <summary>
+        /// По указанному объекту потребления выбрать все счетчики с закончившимся
+        /// сроком поверке
+        /// </summary>
+        /// <param name="objId"> Объекта потребления</param>
+        /// <returns></returns>
         [HttpGet("energy_meters")]
         public async Task<IActionResult> GetExpiredEnergyMetersByObjectId(long objId)
         {
@@ -90,6 +113,13 @@ namespace HttpsAPI.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        /// <summary>
+        /// По указанному объекту потребления выбрать все трансформаторы тока с
+        /// закончившимся сроком поверке
+        /// </summary>
+        /// <param name="objId">Объекта потребления</param>
+        /// <returns></returns>
         [HttpGet("current_transformers")]
         public async Task<IActionResult> GetExpiredCurrentTransformersByObjectId(long objId)
         {
@@ -107,6 +137,13 @@ namespace HttpsAPI.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        /// <summary>
+        /// По указанному объекту потребления выбрать все трансформаторы
+        /// напряжения с закончившимся сроком поверке
+        /// </summary>
+        /// <param name="objId">Объекта потребления</param>
+        /// <returns></returns>
         [HttpGet("voltage_transformers")]
         public async Task<IActionResult> GetExpiredVoltageTransformersByObjectId(long objId)
         {
