@@ -25,7 +25,12 @@ namespace TNE_Test
             services.AddTransient<ITneServices, TneServices>();
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "TNE_Test", Version = "1.0",
-                Description = "Даты отправляются и получаются в формате ISO 8601. Например: 2023-12-22T15:53:43.2311892"}); });
+                Description = "Даты отправляются и получаются в формате ISO 8601. Например: 2023-12-22T15:53:43.2311892"});
+                var basePath = AppContext.BaseDirectory;
+
+                var xmlPath = Path.Combine(basePath, "TNE_Test.xml");
+                c.IncludeXmlComments(xmlPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

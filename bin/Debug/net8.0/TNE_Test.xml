@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TNE_Test</name>
+    </assembly>
+    <members>
+        <member name="M:HttpsAPI.Controllers.TneController.GenerateData">
+            <summary>
+            Заполнение базы даннах данными
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HttpsAPI.Controllers.TneController.CreateNewMeasurementPoint(System.Int64,TNE_Test.DTO.MeasurementPoints.MeasurementPointCreateDto)">
+            <summary>
+            Добавить новую точку измерения с указанием счетчика, трансформатора тока
+            и трансформатора напряжения.
+            </summary>
+            <param name="objOfConsumptionId">Id объекта потребелния</param>
+            <param name="dto">CurrentTransformerCreateDto</param>
+        </member>
+        <member name="M:HttpsAPI.Controllers.TneController.GetAllCalculationMeters(System.Int32)">
+             <summary>
+            Выбрать все расчетные приборы учета в {year} году.
+             </summary>
+             <param name="year">Год</param>
+             <returns></returns>
+        </member>
+        <member name="M:HttpsAPI.Controllers.TneController.GetExpiredEnergyMetersByObjectId(System.Int64)">
+            <summary>
+            По указанному объекту потребления выбрать все счетчики с закончившимся
+            сроком поверке
+            </summary>
+            <param name="objId"> Объекта потребления</param>
+            <returns></returns>
+        </member>
+        <member name="M:HttpsAPI.Controllers.TneController.GetExpiredCurrentTransformersByObjectId(System.Int64)">
+            <summary>
+            По указанному объекту потребления выбрать все трансформаторы тока с
+            закончившимся сроком поверке
+            </summary>
+            <param name="objId">Объекта потребления</param>
+            <returns></returns>
+        </member>
+        <member name="M:HttpsAPI.Controllers.TneController.GetExpiredVoltageTransformersByObjectId(System.Int64)">
+            <summary>
+            По указанному объекту потребления выбрать все трансформаторы
+            напряжения с закончившимся сроком поверке
+            </summary>
+            <param name="objId">Объекта потребления</param>
+            <returns></returns>
+        </member>
+        <member name="T:TNE_Test.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:TNE_Test.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TNE_Test.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TNE_Test.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

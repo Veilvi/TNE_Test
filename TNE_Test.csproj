@@ -26,4 +26,8 @@
       <Folder Include="Migrations\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="bin\Debug\net8.0\TNE_Test.xml" />
+    </ItemGroup>
+
 </Project>
